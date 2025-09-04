@@ -36,10 +36,10 @@ Includes all the reaction selection processes, model updates and their analyses.
 Code in this repo was written specifcally for the transformation investigated in this work.
 Below describes the jupyter notebooks in more detail so future users could modify the code in this repo to apply to their reaction.
 
-First, please take a lookg at `reaction_data.xlsx` and `descriptors.xlsx` to get a sense of how the reaction data was kept track of. Data organization for a new reaction in this way would make it easier for this code-base to be applied.
+First, please take a look at `reaction_data.xlsx` and `descriptors.xlsx` to get a sense of how reaction data were kept track of. Data organization for a new reaction in an analogous way would make it easier for this code-base to be modified and applied.
 
 1. Preparing descriptor array of the target reaction
-* These are necessary as inputs for the machine learning model/
+* These are necessary as inputs for the machine learning model.
 * Descriptor array of all candidate *reaction conditions* (each row=single unique reaction condition; each column=descriptor) are enumerated using `prep_array_of_enumerated_candidates` in `data_utils.py`. A list of descriptor arrays of each reaction component (e.g., catalyst, ligand or solvent) needs to be provided as input.
 ```python
 X_candidate_desc = prep_array_of_enumerated_candidates([catalyst_descriptors, solvent_descriptors])
@@ -53,7 +53,7 @@ X_candidate_desc = np.hstack((
 ```
 
 2. Preparing ID array of the target reaction
-* These were used in parallel with the descriptor array to easily point back to the specific chemicals of the selected reactions.
+* These were used in parallel with the descriptor array to easily point back to the specific chemicals to use in the selected reactions.
 * It can be prepared analogous to how the descriptor array of reaction conditions were generated. The `np.arange()` should be provided for each reaction component. For example, if the reaction condition comprises only catalyst and solvent:
 ```python
 prep_array_of_enumerated_candidates([
@@ -102,4 +102,4 @@ The [:, 2:] is there because substrates are not included in the candidate arrays
 this function in `atl_utils.py` will need to be modified so that it prints out reagent names appropriately. 
 
 7. Conducting experiments to conclude an iteration of ATL
-After conducting the experiments and recording in an excel, steps 4~6 can be repeated.
+* After conducting the experiments and recording in an excel, steps 4~6 can be repeated.
