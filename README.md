@@ -31,6 +31,9 @@ Includes all the helper functions to carry out ATL and their analyses.
 5. Ala4MeBn.ipynb, ProMex.ipynb, ProIndan.ipynb, AlaIndan.ipynb
 Includes all the reaction selection processes, model updates and their analyses.
 
+6. retrospective.ipynb
+Using only Proline+Benzylamine, Proline + Indan as the source data (total 101 reactions), the 98 reactions conducted for Alanine+Indan was explored with random selection, EDBO, transferred source model with no updates (TL) and ATL.
+
 
 ## Workflow for adapting code-base for future use
 Code in this repo was written specifcally for the transformation investigated in this work.
